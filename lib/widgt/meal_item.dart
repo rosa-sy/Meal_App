@@ -1,5 +1,3 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
 import 'package:meal_app/modules/meal.dart';
@@ -14,7 +12,7 @@ class MealItem extends StatelessWidget {
   // final Function removeItem;
   final Affordability affordability;
   const MealItem(
-      {required this.id,
+      {super.key, required this.id,
       required this.title,
       required this.imageUrl,
       required this.duration,
@@ -70,13 +68,13 @@ class MealItem extends StatelessWidget {
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 4,
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         child: Column(
           children: [
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(15),
                       topRight: Radius.circular(15)),
                   child: Image.network(
@@ -93,10 +91,10 @@ class MealItem extends StatelessWidget {
                         width: 260,
                         color: Colors.black54,
                         padding:
-                            EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                            const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                         child: Text(
                           title,
-                          style: TextStyle(fontSize: 26, color: Colors.white),
+                          style: const TextStyle(fontSize: 26, color: Colors.white),
                           softWrap: true,
                           overflow: TextOverflow.fade,
                         )))
@@ -108,28 +106,28 @@ class MealItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(children: [
-                    Icon(Icons.schedule),
-                    SizedBox(
+                    const Icon(Icons.schedule),
+                    const SizedBox(
                       width: 6,
                     ),
                     Text("$duration min"),
-                    SizedBox(
+                    const SizedBox(
                       width: 6,
                     ),
                   ]),
                   Row(children: [
-                    Icon(Icons.work),
-                    SizedBox(
+                    const Icon(Icons.work),
+                    const SizedBox(
                       width: 6,
                     ),
-                    Text("$complexityText"),
+                    Text(complexityText),
                   ]),
                   Row(children: [
-                    Icon(Icons.attach_money),
-                    SizedBox(
+                    const Icon(Icons.attach_money),
+                    const SizedBox(
                       width: 6,
                     ),
-                    Text("$affordabilityText")
+                    Text(affordabilityText)
                   ]),
                 ],
               ),

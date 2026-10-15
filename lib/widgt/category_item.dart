@@ -5,10 +5,10 @@ class CategoryItem extends StatelessWidget {
   final String id;
   final String title;
   final Color color;
-  CategoryItem(
+  const CategoryItem(
     this.id,
     this.title,
-    this.color,
+    this.color, {super.key}
   );
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(CategoryMealsScreen.routeName, arguments: {
@@ -24,11 +24,7 @@ class CategoryItem extends StatelessWidget {
         splashColor: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(15),
         child: Container(
-          padding: EdgeInsets.all(15),
-          child: Text(
-            title,
-            style: Theme.of(context).textTheme.subtitle1,
-          ),
+          padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [color.withOpacity(0.1), color],
@@ -36,6 +32,10 @@ class CategoryItem extends StatelessWidget {
                   end: Alignment.bottomRight),
               color: color,
               borderRadius: BorderRadius.circular(15)),
+          child: Text(
+            title,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
         ));
   }
 }

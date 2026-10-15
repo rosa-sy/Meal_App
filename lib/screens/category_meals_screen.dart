@@ -1,15 +1,12 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
-import 'package:meal_app/dummy_data.dart';
 import 'package:meal_app/modules/meal.dart';
 import 'package:meal_app/widgt/meal_item.dart';
 
 class CategoryMealsScreen extends StatefulWidget {
   static const routeName = "category_meals";
   final List<Meal> availableMeals;
-  CategoryMealsScreen(this.availableMeals);
+  const CategoryMealsScreen(this.availableMeals, {super.key});
 
   @override
   State<CategoryMealsScreen> createState() => _CategoryMealsScreenState();
@@ -45,7 +42,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(categoryTitle!),
+        title: Text(categoryTitle),
       ),
       body: ListView.builder(
         itemBuilder: (ctx, index) {
