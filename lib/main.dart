@@ -10,6 +10,8 @@ import 'modules/meal.dart';
 
 import 'package:provider/provider.dart';
 import 'package:meal_app/providers/favorites_provider.dart';
+
+import 'screens/search_screen.dart';
 // void main() => runApp(
 //   const ProviderScope(
 //     child: MyApp()
@@ -84,6 +86,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/': (context) =>  TabsScreen(),
         MealDetailScreen.routeName: (context) =>  MealDetailScreen(),
+        SearchScreen.routeName: (context) =>  SearchScreen(),
        
         CategoryMealsScreen.routeName: ((context) =>
             CategoryMealsScreen(_availableMeals)),

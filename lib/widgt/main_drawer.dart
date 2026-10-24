@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/screens/filters_screen.dart';
+import 'package:meal_app/screens/search_screen.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key});
@@ -44,6 +45,9 @@ class MainDrawer extends StatelessWidget {
         }),
         buildListTile("Filters", Icons.settings, () {
           Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName);
+        }),
+        buildListTile("Search", Icons.search, () {
+          Navigator.of(context).pushReplacementNamed(SearchScreen.routeName);
         }),
       ]),
     );

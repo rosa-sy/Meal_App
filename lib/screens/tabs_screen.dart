@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/screens/categories_screen.dart';
 import 'package:meal_app/screens/favorites_screen.dart';
+import 'package:meal_app/screens/search_screen.dart';
 import '../widgt/main_drawer.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -24,6 +25,10 @@ class _TabsScreenState extends State<TabsScreen> {
       {
         'page': const FavoritesScreen(),
         'title': 'Your Favorites',
+      },
+      {
+        'page': const SearchScreen(),
+        'title': 'Search',
       }
     ];
     // TODO: implement initState

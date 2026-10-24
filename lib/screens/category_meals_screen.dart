@@ -34,7 +34,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
     }).toList();
     super.didChangeDependencies();
   }
-
+  
   @override
   void initStat() {}
 
