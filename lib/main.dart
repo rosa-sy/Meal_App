@@ -1,3 +1,5 @@
+import 'package:meal_app/services/notification_service.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:meal_app/dummy_data.dart';
@@ -17,12 +19,23 @@ import 'screens/search_screen.dart';
 //     child: MyApp()
 //     ),
 //     );
-void main() => runApp(
-  ChangeNotifierProvider(
-    create: (context) => FavoritesProvider(),
-    child: const MyApp(),
-  ),
-);
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await notificationService.init();
+
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => FavoritesProvider(),
+      child: const MyApp(),
+    ),
+  );
+}
+// Future<void> main() async => runApp(
+//   ChangeNotifierProvider(
+//     create: (context) => FavoritesProvider(),
+//     child: const MyApp(),
+//   ),
+// );
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});

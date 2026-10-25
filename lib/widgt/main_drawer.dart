@@ -1,3 +1,4 @@
+import 'package:meal_app/services/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:meal_app/screens/filters_screen.dart';
 import 'package:meal_app/screens/search_screen.dart';
@@ -48,6 +49,13 @@ class MainDrawer extends StatelessWidget {
         }),
         buildListTile("Search", Icons.search, () {
           Navigator.of(context).pushReplacementNamed(SearchScreen.routeName);
+        }),
+        // buildListTile("Notifications", Icons.notifications, () {
+        //   // Handle notification tap
+        // }),
+        buildListTile("Notifications", Icons.notifications, () {
+          notificationService.showLunchNotification();
+          Navigator.of(context).pop();   // يقفل الـ drawer ليظهر الإشعار بوضوح
         }),
       ]),
     );

@@ -1,0 +1,2 @@
+C:/Users/ASUs/flutter-p/course_flutter/meal_app/android/app/.cxx/Debug/c6u4x4d1/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/ASUs/flutter-p/course_flutter/meal_app/android/app/.cxx/Debug/c6u4x4d1/x86_64/CMakeFiles/rebuild_cache.dir
