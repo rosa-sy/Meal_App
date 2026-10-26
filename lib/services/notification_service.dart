@@ -1,4 +1,6 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:meal_app/navigator_key.dart';
+import 'package:meal_app/screens/search_screen.dart';
 
 class NotificationService {
   final FlutterLocalNotificationsPlugin _plugin =
@@ -9,9 +11,14 @@ class NotificationService {
         AndroidInitializationSettings('@mipmap/ic_launcher');
     const settings = InitializationSettings(android: androidSettings);
 
-    await _plugin.initialize(settings);
+    await _plugin.initialize(
+      settings,
+      onDidReceiveNotificationResponse: (NotificationResponse response) {
+        navigatorKey.currentState?.pushNamed(SearchScreen.routeName); // Replace with your desired route
+        // You can navigate to a specific screen or perform any action here
+      });
 
-    // طلب إذن الإشعارات (أندرويد 13+)، من نفس الـ README اللي لصقتيه
+    
     await _plugin
         .resolvePlatformSpecificImplementation<
             AndroidFlutterLocalNotificationsPlugin>()
@@ -21,8 +28,8 @@ class NotificationService {
   Future<void> showLunchNotification() async {
     const details = NotificationDetails(
       android: AndroidNotificationDetails(
-        'lunch_channel',          // رقم القناة
-        'Lunch Reminders',        // اسمها اللي يظهر للمستخدم بالإعدادات
+        'lunch_channel',         
+        'Lunch Reminders',        
         importance: Importance.high,
         priority: Priority.high,
       ),
@@ -32,5 +39,4 @@ class NotificationService {
   }
 }
 
-// نسخة وحدة نستخدمها بكل التطبيق
 final notificationService = NotificationService();
