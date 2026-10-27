@@ -1,5 +1,5 @@
 # meal_app
-Flutter App "Meal"
+Flutter App "Meal Recipes App" with API search, Provider state management, and local notifications.
 
 1- offers 10 delicious food categories.
 
@@ -12,7 +12,7 @@ Flutter App "Meal"
 
 https://github.com/rosa-sy/Meal_App/assets/85003576/65db90d6-7d26-44a6-b58b-ae21a23c888c
 
-
+https://github.com/user-attachments/assets/32d13c78-15f4-4759-83d4-3835b4067470
 
 ## Getting Started
 
